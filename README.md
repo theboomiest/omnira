@@ -23,4 +23,3 @@ This project uses the following technologies to provide a responsive, offline-ca
 | [Supabase](https://supabase.com/docs)           | Backend-as-a-service (Postgres, auth, file storage, etc.)         |
 | [Zod](https://zod.dev) / [Yup](https://github.com/jquense/yup) | Schema validation for user input and local data                |
 | [Framer Motion](https://www.framer.com/motion/) | Animation library for React components                          |
- 
