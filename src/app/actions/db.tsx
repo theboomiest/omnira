@@ -7,6 +7,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { useState } from 'react';
 import { ConfirmDialog } from '../ui/confirm-dialogue';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 interface User {
   id: number;
@@ -52,7 +53,7 @@ export function AddUserForm() {
     <>
       <p>{status}</p>
       Name:
-      <input
+      <TextField
         type="text"
         value={username}
         onChange={(ev) => setUsername(ev.target.value)}
@@ -129,8 +130,7 @@ export function AddDomainForm() {
     <>
       <p>{status}</p>
       Name:
-      <input
-        type="text"
+      <TextField
         value={domainName}
         onChange={(ev) => setDomainName(ev.target.value)}
         className="mt-1 block w-full bg-gray-800 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-500"
