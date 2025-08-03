@@ -21,7 +21,7 @@ export default function Home() {
               <PlanetIcon size="36px"/><div>Add Domain</div>
             </div>
             <AddDomainForm />
-            <h2 className="w-[50vw] s3 text-tert">Domain List</h2>
+            <h2 className="w-[50vw] s4 text-tert">Domain List</h2>
             <DomainList />
           </div>
 
@@ -30,7 +30,7 @@ export default function Home() {
                 <UserCircleIcon size="36px"/><div>Add User</div>
             </div>
             <AddUserForm />
-            <h2 className="w-[50vw] s3 text-tert">User List</h2>
+            <h2 className="w-[50vw] s4 text-tert">User List</h2>
             <UserList />
           </div>
         </div>

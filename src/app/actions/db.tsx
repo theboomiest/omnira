@@ -52,7 +52,7 @@ export function AddUserForm() {
   return (
     <>
       <div className="tag2 text-quat">{status}</div>
-      <div className="b1 text-tert">Name:</div>
+      <div className="b1 text-seco">Name:</div>
       <TextField
         type="text"
         value={username}
@@ -129,7 +129,7 @@ export function AddDomainForm() {
   return (
     <>
       <div className="tag2 text-quat">{status}</div>
-      <div className="b1 text-tert">Name:</div>
+      <div className="b1 text-seco">Name:</div>
       <TextField
         value={domainName}
         onChange={(ev) => setDomainName(ev.target.value)}
