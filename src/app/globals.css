@@ -1,7 +1,301 @@
+@layer theme, base, mui, components, utilities;
+@import 'tailwindcss';
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: hsla(200, 100%, 99.4%, 1);
+  --foreground: hsla(33, 42.9%, 4.1%, 1);
+
+  /* Color styles */
+  --omni-orange: hsla(30, 72.2%, 54.9%, 1);
+  --omni-green: hsla(120, 72.2%, 54.9%, 1);
+  --omni-blue: hsla(210, 72.2%, 54.9%, 1);
+  --omni-pink: hsla(300, 72.2%, 54.9%, 1);
+  --bg-raised: hsla(200, 100%, 99.4%, 1);
+  --bg-default: hsla(200, 23.1%, 97.5%, 1);
+  --bg-lower: hsla(200, 9.1%, 93.5%, 1);
+  --bg-orange-light: hsla(30, 62.5%, 96.9%, 1);
+  --bg-green-light: hsla(120, 50%, 96.1%, 1);
+  --bg-blue-light: hsla(210, 100%, 96.5%, 1);
+  --bg-pink-light: hsla(300, 62.5%, 96.9%, 1);
+  --text-prim: hsla(33, 42.9%, 4.1%, 1);
+  --text-seco: hsla(30, 10.9%, 18%, 1);
+  --text-tert: hsla(210, 4.3%, 36.5%, 1);
+  --text-quat: hsla(207, 8.1%, 56.5%, 1);
+  --text-orange-dark: hsla(29, 100%, 20%, 1);
+  --text-green-dark: hsla(119, 67.3%, 19.2%, 1);
+  --text-blue-dark: hsla(210, 66.4%, 21%, 1);
+  --text-pink-dark: hsla(300, 67.3%, 21.6%, 1);
+
+  /* Text-size styles */
+  --t1: 158px;
+  --t2: 124px;
+  --h1: 48px;
+  --h2: 40px;
+  --h3: 33px;
+  --h4: 28px;
+  --h5: 23px;
+  --h6: 19px;
+  --s1: 33px;
+  --s2: 28px;
+  --s3: 23px;
+  --s4: 19px;
+  --b1: 19px;
+  --b2: 16px;
+  --tag1: 19px;
+  --tag2: 17px;
+  --tag3: 14px;
 }
+
+/* Titles */
+.t1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--t1);
+  line-height: var(--t1);
+}
+
+.t2 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: var(--t2);
+  line-height: var(--t2);
+}
+
+/* Headers */
+.h1 {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--h1);
+  line-height: var(--h1);
+}
+
+.h1e {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--h1);
+  line-height: var(--h1);
+}
+
+.h2 {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--h2);
+  line-height: var(--h2);
+}
+
+.h2e {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--h2);
+  line-height: var(--h2);
+}
+
+.h3 {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--h3);
+  line-height: var(--h3);
+}
+
+.h3e {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--h3);
+  line-height: var(--h3);
+}
+
+.h4 {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--h4);
+  line-height: var(--h4);
+}
+
+.h4e {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--h4);
+  line-height: var(--h4);
+}
+
+.h5 {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--h5);
+  line-height: var(--h5);
+}
+
+.h5e {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--h5);
+  line-height: var(--h5);
+}
+
+.h6 {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--h6);
+  line-height: var(--h6);
+}
+
+.h6e {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--h6);
+  line-height: var(--h6);
+}
+
+/* SUBHEADERS */
+.s1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--s1);
+  line-height: var(--s1);
+  text-transform: uppercase;
+}
+
+.s1e {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--s1);
+  line-height: var(--s1);
+  text-transform: uppercase;
+}
+
+.s2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--s2);
+  line-height: var(--s2);
+  text-transform: uppercase;
+}
+
+.s2e {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--s2);
+  line-height: var(--s2);
+  text-transform: uppercase;
+}
+
+.s3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--s3);
+  line-height: var(--s3);
+  text-transform: uppercase;
+}
+
+.s3e {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--s3);
+  line-height: var(--s3);
+  text-transform: uppercase;
+}
+
+.s4 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--s4);
+  line-height: var(--s4);
+  text-transform: uppercase;
+}
+
+.s4e {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--s4);
+  line-height: var(--s4);
+  text-transform: uppercase;
+}
+
+/* Body */
+.b1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: var(--b1);
+}
+
+.b2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: var(--b2);
+}
+
+/* System Tags */
+.tag1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: var(--tag1);
+  line-height: var(--tag1);
+  text-transform: uppercase;
+}
+
+.tag2 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: var(--tag2);
+  line-height: var(--tag2);
+  text-transform: uppercase;
+}
+
+.tag3 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: var(--tag3);
+  line-height: var(--tag3);
+  text-transform: uppercase;
+}
+
+/* Background Colors */
+.bg-raised     { background-color: var(--bg-raised); }
+.bg-default    { background-color: var(--bg-default); }
+.bg-lower      { background-color: var(--bg-lower); }
+
+.bg-omni-orange { background-color: var(--bg-orange-light); }
+.bg-omni-green  { background-color: var(--bg-green-light); }
+.bg-omni-blue   { background-color: var(--bg-blue-light); }
+.bg-omni-pink   { background-color: var(--bg-pink-light); }
+
+/* Text Colors */
+.text-prim     { color: var(--text-prim); }
+.text-second   { color: var(--text-second); }
+.text-tert    { color: var(--text-tert); }
+.text-quat  { color: var(--text-quat); }
+
+.text-omni-orange { color: var(--text-orange-dark); }
+.text-omni-green  { color: var(--text-green-dark); }
+.text-omni-blue   { color: var(--text-blue-dark); }
+.text-omni-pink   { color: var(--text-pink-dark); }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -24,10 +318,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@layer base{
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 a {
@@ -40,5 +336,7 @@ a {
     color-scheme: dark;
   }
 }
+
+
 
 @import 'tailwindcss';
