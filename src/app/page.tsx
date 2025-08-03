@@ -1,9 +1,9 @@
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./page.module.css";
 import "./globals.css";
-import { SignupForm } from "./ui/signup-form";
-import { AddUserForm, AddDomainForm, db, UserList, DomainList } from "./actions/db";
-import { PlanetIcon, UserPlusIcon, UserCircleIcon } from "@phosphor-icons/react/ssr";
+// import { SignupForm } from "./ui/signup-form";
+import { AddUserForm, AddDomainForm, UserList, DomainList } from "./actions/db";
+import { PlanetIcon, UserCircleIcon } from "@phosphor-icons/react/ssr";
 
 export default function Home() {
   return (
