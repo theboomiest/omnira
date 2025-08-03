@@ -17,19 +17,19 @@ export function ConfirmDialog({ message, onConfirm, onCancel }: ConfirmDialogPro
   }, [onCancel]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-black/50 bg- flex items-center justify-center b2">
       <div className="bg-gray-800 text-white p-6 rounded shadow-lg max-w-sm w-full">
         <p className="mb-4">{message}</p>
         <div className="flex justify-end space-x-4">
           <button
             onClick={onCancel}
-            className="px-3 py-1 rounded bg-gray-600 hover:bg-gray-500"
+            className="px-4 py-3 rounded bg-gray-600 hover:bg-gray-500 tag2"
           >
             Cancel
           </button>
           <button
             onClick={onConfirm}
-            className="px-3 py-1 rounded bg-red-600 hover:bg-red-500"
+            className="px-4 py-3 rounded bg-red-600 hover:bg-red-500 tag2"
           >
             Confirm
           </button>

@@ -51,15 +51,15 @@ export function AddUserForm() {
 
   return (
     <>
-      <p>{status}</p>
-      Name:
+      <div className="tag2 text-quat">{status}</div>
+      <div className="b1 text-tert">Name:</div>
       <TextField
         type="text"
         value={username}
         onChange={(ev) => setUsername(ev.target.value)}
-        className="mt-1 block w-full bg-gray-800 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-500"
+        // className="mt-1 block w-full bg-gray-800 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-500"
       />
-      <Button onClick={AddUser}>Add</Button>
+      <Button onClick={AddUser} className="tag2 py-3">Add</Button>
     </>
   );
 }
@@ -77,16 +77,16 @@ export function UserList() {
 
   return (
     <>
-      <ul>
+      <ul className="b2">
         {users?.map((user) => (
-          <li key={user.id} className="flex justify-between items-center py-1">
+          <li key={user.id} className="flex justify-between items-center py-2 px-3 hover:bg-gray-600/10 rounded-md">
             <span>{user.username}</span>
             <Button
               onClick={() => {
                 setConfirmUserId(user.id);
                 setConfirmUsername(user.username);
               }}
-              className="ml-4 bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700"
+              className="ml-4 text-red-800 px-2 py-2 rounded hover:bg-red-100 tag3"
             >
               Delete
             </Button>
@@ -128,14 +128,59 @@ export function AddDomainForm() {
 
   return (
     <>
-      <p>{status}</p>
-      Name:
+      <div className="tag2 text-quat">{status}</div>
+      <div className="b1 text-tert">Name:</div>
       <TextField
         value={domainName}
         onChange={(ev) => setDomainName(ev.target.value)}
-        className="mt-1 block w-full bg-gray-800 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-500"
+        // className="mt-1 block w-full bg-gray-800 text-white border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-500"
       />
-      <Button onClick={AddDomain}>Add</Button>
+      <Button onClick={AddDomain} className="tag2 py-3">Add</Button>
+    </>
+  );
+}
+
+export function DomainList() {
+  const users = useLiveQuery(() => db.domains.toArray());
+  const [confirmDomainId, setConfirmDomainId] = useState<number | null>(null);
+  const [confirmDomainName, setConfirmDomainName] = useState<string | null>(null);
+
+  const handleDelete = async (id: number) => {
+    await db.domains.delete(id);
+    setConfirmDomainId(null);
+    setConfirmDomainName(null);
+  };
+
+  return (
+    <>
+      <ul className="b2">
+        {users?.map((domain) => (
+          <li key={domain.id} className="flex justify-between items-center py-2 px-3 hover:bg-gray-600/10 rounded-md">
+            <span>{domain.domainName}</span>
+            <Button
+              onClick={() => {
+                setConfirmDomainId(domain.id);
+                setConfirmDomainName(domain.domainName);
+              }}
+              className="ml-4 text-red-800 px-2 py-2 rounded hover:bg-red-100 tag3"
+            >
+              Delete
+            </Button>
+          </li>
+        ))}
+      </ul>
+
+      {confirmDomainId !== null && confirmDomainName !== null && (
+        <ConfirmDialog
+
+          message={`Are you sure you want to delete "${confirmDomainName}"?`}
+          onConfirm={() => handleDelete(confirmDomainId)}
+          onCancel={() => {
+            setConfirmDomainId(null);
+            setConfirmDomainName(null);
+          }}
+        />
+      )}
     </>
   );
 }
