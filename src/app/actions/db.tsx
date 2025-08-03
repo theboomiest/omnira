@@ -34,7 +34,7 @@ db.version(1).stores({
 // Connect your dexie-cloud database:
 db.cloud.configure({
   databaseUrl: "https://zkhha4epl.dexie.cloud",
-  requireAuth: false // optional
+  requireAuth: true // optional
 });
 
 export { db };
