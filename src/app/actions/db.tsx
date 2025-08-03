@@ -1,7 +1,7 @@
 // db.ts
 'use client'
 
-import Dexie from 'dexie';
+import Dexie, { type EntityTable } from 'dexie';
 import { dexieCloud } from 'dexie-cloud-addon';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useState } from 'react';
@@ -9,12 +9,20 @@ import { ConfirmDialog } from '../ui/confirm-dialogue';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-// interface User {
-//   id: number;
-//   username: string;
-// }
+interface User {
+  id: number;
+  username: string;
+}
 
-const db = new Dexie('omniraDB', {addons: [dexieCloud]});
+interface Domain {
+  id: number;
+  domainName: string;
+}
+
+const db = new Dexie('omniraDB', {addons: [dexieCloud]}) as Dexie & {
+  users: EntityTable<User, 'id'>,
+  domains: EntityTable<Domain, 'id'>
+};
 
 // Schema declaration:
 db.version(1).stores({
